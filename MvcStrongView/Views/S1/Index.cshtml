@@ -1,0 +1,20 @@
+﻿
+@model List<string>   
+@{
+    
+  // 2--> In MVC (S1 controller) Provide return View of data in order to pass data to view.
+    // so to make View understand the data Type we use @model<datatype>  an razer directive as string View.
+        
+    ViewBag.Title = "Index";
+}
+
+<h2>List of Jobs</h2>
+
+@foreach (var item in Model)// 3 of 3 --> Mvc Preffered type of passing data is strong type mechanisum
+    //After making the View of Strong Type we have to use Model Keyword to access the data based on the incoming type. 
+    //Once we define a view with @model than we have to consume that view always with the same datatype & it is reusable with the specified data type.
+{
+    <li>
+        @item.ToUpper()
+    </li>
+}
